@@ -4,7 +4,7 @@
 #Assignment: Lab 6, Part 2
 
 def main():
-  textFile = open("fish.txt", 'r')
+  textFile = open("gettysberg.txt", 'r')
 
   lineCount = 0
   wordCount = 0
@@ -15,14 +15,14 @@ def main():
     words = line.split()
     for w in words:
       wordCount = wordCount + 1
-      character = words.split("")
-      for char in character:
-        charCount = charCount + 1
+      letter = w
+      for l in letter:
+        letterCount = letterCount + 1
     #print(line)
   
   print("Lines: ", lineCount)
   print("Words: ", wordCount)
-  print("Characters: ", charCount)
+  print("Characters: ", letterCount)
 
 if __name__ == '__main__':
   main()
