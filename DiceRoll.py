@@ -6,21 +6,24 @@ import random
 
 def main():
   #Create an empty list with possible roll values
-  rolls = [0,0,0,0,0,0,0,0,0,0,0,0]
-  #Create two dice values ranging from 1 - 6 each
-  for r in range(100):
-    dice1 = random.randint(1, 6)
-    rolls[dice1 - 1] = rolls[dice1 - 1] + 1
-    dice2 = random.randint(1, 6)
-    rolls[dice2 - 1] = rolls[dice2 - 1] + 1
-    diceRoll = dice1 + dice2
+  rolls = [0,0,0,0,0,0,0,0,0,0,0]
 
-  print(diceRoll)
+  # Number of iterations:
+  numIterations = 10000
+
+  #Create two dice values ranging from 1 - 6 each
+  for r in range(numIterations):
+    dice1 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    diceRoll = dice1 + dice2
+    rolls[diceRoll - 2] = rolls[diceRoll - 2] + 1
+
   #find the sum total of the two dice 
-  value = 1
+  dice = 2
   for count in rolls:
-    print(value, ":", count)
-    value = value + 1
+    percent = (count / numIterations) * 100
+    print(f"{dice}: {count} rolls; {round(percent, 2)}%")
+    dice = dice + 1
   #print statictics for dice rolls
   print(rolls)
 
