@@ -11,12 +11,16 @@ def main():
   for r in range(100):
     dice1 = random.randint(1, 6)
     rolls[dice1 - 1] = rolls[dice1 - 1] + 1
-  dice2 = random.randint(1, 6)
+    dice2 = random.randint(1, 6)
+    rolls[dice2 - 1] = rolls[dice2 - 1] + 1
+    diceRoll = dice1 + dice2
+
+  print(diceRoll)
   #find the sum total of the two dice 
-  dice = 1
+  value = 1
   for count in rolls:
-    print(dice, ":", count)
-    dice = dice + 1
+    print(value, ":", count)
+    value = value + 1
   #print statictics for dice rolls
   print(rolls)
 
